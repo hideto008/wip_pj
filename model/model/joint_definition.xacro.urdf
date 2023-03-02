@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<robot name="joint_definitions" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:property name="yaml_file" value="$(find model)/config/model_params.yaml" />
+    <xacro:property name="props" value="${xacro.load_yaml(yaml_file)}" />
+
+    <!-- for fixed joint -->
+    <xacro:macro name="fixed_joint" params="joint_name parent_link child_link">
+        <xacro:property name="child_props" value="${props[child_link]}" />
+
+        <joint name="${joint_name}" type="fixed">
+            <parent link="${parent_link}" />
+            <child link="${child_link}" />
+            <origin xyz="${child_props['joint_origin_x']} ${child_props['joint_origin_y']} ${child_props['joint_origin_z']}" 
+                    rpy="${child_props['joint_origin_a']} ${child_props['joint_origin_b']} ${child_props['joint_origin_c']}" />
+        </joint>
+    </xacro:macro>
+
+    <!-- for continuous joint -->
+    <xacro:macro name="continuous_joint" params="joint_name parent_link child_link *axis *dynamics">
+        <xacro:property name="child_props" value="${props[child_link]}" />
+
+        <joint name="${joint_name}" type="continuous">
+            <parent link="${parent_link}" />
+            <child link="${child_link}" />
+            <origin xyz="${child_props['joint_origin_x']} ${child_props['joint_origin_y']} ${child_props['joint_origin_z']}" 
+                    rpy="${child_props['joint_origin_a']} ${child_props['joint_origin_b']} ${child_props['joint_origin_c']}"  />
+            <xacro:insert_block name="axis" />
+            <xacro:insert_block name="dynamics" />
+        </joint>
+
+    </xacro:macro>
+
+    <!-- for revolute joint -->
+    <xacro:macro name="revolute_joint" params="joint_name parent_link child_link *axis *dynamics *limit">
+        <xacro:property name="child_props" value="${props[child_link]}" />
+
+        <joint name="${joint_name}" type="revolute">
+            <parent link="${parent_link}" />
+            <child link="${child_link}" />
+            <origin xyz="${child_props['joint_origin_x']} ${child_props['joint_origin_y']} ${child_props['joint_origin_z']}" 
+                    rpy="${child_props['joint_origin_a']} ${child_props['joint_origin_b']} ${child_props['joint_origin_c']}" />
+            <xacro:insert_block name="axis" />
+            <xacro:insert_block name="dynamics" />
+            <xacro:insert_block name="limit" />
+        </joint>
+
+    </xacro:macro>
+
+
+    <!-- joint definitions -->
+    <!-- for base link -->
+    <joint name="dummy_joint" type="fixed">
+        <parent link="dummy" />
+        <child link="base_link" />
+    </joint>
+
+    <xacro:fixed_joint joint_name="base_to_neck" parent_link="base_link" child_link="neck_link" />
+
+    <xacro:fixed_joint joint_name="neck_to_head" parent_link="neck_link" child_link="head_link" />
+
+    <xacro:continuous_joint joint_name="base_to_tire_left" parent_link="base_link" child_link="tire_left_link">
+        <axis xyz="0.0 1.0 0.0" />
+        <dynamics damping="0.0002" friction="0.002" />
+    </xacro:continuous_joint>
+
+    <xacro:continuous_joint joint_name="base_to_tire_right" parent_link="base_link" child_link="tire_right_link">
+        <axis xyz="0.0 1.0 0.0" />
+        <dynamics damping="0.0002" friction="0.002" />
+    </xacro:continuous_joint>
+
+</robot>

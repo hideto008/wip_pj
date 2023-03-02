@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+    <world name="modified_ode_engin_params">
+        <include>
+            <uri>model://sun</uri>
+        </include>
+        <include>
+            <uri>model://ground_plane</uri>
+        </include>
+        <include>
+            <name>berr01</name>
+            <uri>model://beer</uri>
+            <static>false</static>
+            <pose>1 0 1 0 0 0</pose>
+        </include>
+
+        <gravity>0 0 -9.80665</gravity>
+
+        <physics type="ode">
+            <real_time_update_rate>1000</real_time_update_rate>
+            <ode>
+                <constraints>
+                    <cfm>0</cfm>
+                    <erp>1</erp>
+                </constraints>
+            </ode>
+        </physics>
+    </world>
+</sdf>
