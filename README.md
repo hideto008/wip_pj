@@ -1,4 +1,4 @@
-# Wheeled Invert Pendulum Prject , ROS2-Gazebo11
+# Wheeled Invert Pendulum Project , ROS2-Gazebo11
 
 ## wip model
 
