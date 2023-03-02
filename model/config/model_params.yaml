@@ -1,0 +1,204 @@
+# Joint and Link definitions of the model
+base_link: #cylinder
+  # link joint origin from parent joint in parent coordination
+  joint_origin_x: 0.0
+  joint_origin_y: 0.0
+  joint_origin_z: 0.0
+  joint_origin_a: 0.0
+  joint_origin_b: 0.0
+  joint_origin_c: 0.0
+
+  # shape origin coordinate from link joint origin in link joint origin coordinate
+  shape_origin_x_from_joint_origin: 0.0
+  shape_origin_y_from_joint_origin: 0.0
+  shape_origin_z_from_joint_origin: 0.0
+  shape_origin_a_from_joint_origin: 1.5708 # rotate in x axis
+  shape_origin_b_from_joint_origin: 0.0 # rotate in y axis
+  shape_origin_c_from_joint_origin: 0.0 # rotate in z axis
+
+  # shape for visual and collision tags
+  radius: 0.005
+  length: 0.1
+
+  # center of mass origin from link joint origin
+  com_origin_x_from_joint_origin: 0.0
+  com_origin_y_from_joint_origin: 0.0
+  com_origin_z_from_joint_origin: 0.0
+  com_origin_a_from_joint_origin: 0.0 # rotate in x axis
+  com_origin_b_from_joint_origin: 0.0 # rotate in y axis
+  com_origin_c_from_joint_origin: 0.0 # rotate in z axis
+
+  # inertial parameters
+  # link mass
+  mass: 0.1
+
+  # link inertia at center of mass
+  ixx: 0.0000839583
+  ixy: 0.0
+  ixz: 0.0
+  iyy: 0.00000125
+  iyz: 0.0
+  izz: 0.0000839583
+
+neck_link: #cylinder
+  # link joint origin from parent joint in parent coordination
+  joint_origin_x: 0.0
+  joint_origin_y: 0.0
+  joint_origin_z: 0.0
+  joint_origin_a: 0.0
+  joint_origin_b: 0.0
+  joint_origin_c: 0.0
+
+  # shape origin coordinate from link joint origin in link joint origin coordinate
+  shape_origin_x_from_joint_origin: 0.0
+  shape_origin_y_from_joint_origin: 0.0
+  shape_origin_z_from_joint_origin: 0.05
+  shape_origin_a_from_joint_origin: 0.0 # rotate in x axis
+  shape_origin_b_from_joint_origin: 0.0 # rotate in y axis
+  shape_origin_c_from_joint_origin: 0.0 # rotate in z axis
+
+  # shape for visual and collision tags
+  radius: 0.005
+  length: 0.1
+
+  # center of mass origin from link joint origin
+  com_origin_x_from_joint_origin: 0.0
+  com_origin_y_from_joint_origin: 0.0
+  com_origin_z_from_joint_origin: 0.05
+  com_origin_a_from_joint_origin: 0.0 # rotate in x axis
+  com_origin_b_from_joint_origin: 0.0 # rotate in y axis
+  com_origin_c_from_joint_origin: 0.0 # rotate in z axis
+
+  # inertial parameters
+  # link mass
+  mass: 0.1
+
+  # link inertia at center of mass 
+  ixx: 0.0000839583
+  ixy: 0.0
+  ixz: 0.0
+  iyy: 0.00000125
+  iyz: 0.0
+  izz: 0.0000839583
+
+head_link: #sphere
+  # link joint origin from parent joint in parent coordination
+  joint_origin_x: 0.0
+  joint_origin_y: 0.0
+  joint_origin_z: 0.1
+  joint_origin_a: 0.0
+  joint_origin_b: 0.0
+  joint_origin_c: 0.0
+
+  # shape origin coordinate from link joint origin in link joint origin coordinate
+  shape_origin_x_from_joint_origin: 0.0
+  shape_origin_y_from_joint_origin: 0.0
+  shape_origin_z_from_joint_origin: 0.025
+  shape_origin_a_from_joint_origin: 0.0 # rotate in x axis
+  shape_origin_b_from_joint_origin: 0.0 # rotate in y axis
+  shape_origin_c_from_joint_origin: 0.0 # rotate in z axis
+
+  # shape for visual and collision tags
+  radius: 0.025
+
+  # center of mass origin from link joint origin
+  com_origin_x_from_joint_origin: 0.0
+  com_origin_y_from_joint_origin: 0.0
+  com_origin_z_from_joint_origin: 0.025
+  com_origin_a_from_joint_origin: 0.0 # rotate in x axis
+  com_origin_b_from_joint_origin: 0.0 # rotate in y axis
+  com_origin_c_from_joint_origin: 0.0 # rotate in z axis
+
+  # inertial parameters
+  # link mass
+  mass: 1.0
+
+  # link inertia at center of mass 
+  ixx: 0.0000025
+  ixy: 0.0
+  ixz: 0.0
+  iyy: 0.0000025
+  iyz: 0.0
+  izz: 0.0000025
+
+tire_left_link: #cylinder
+  # link joint origin from parent joint in parent coordination
+  joint_origin_x: 0.0
+  joint_origin_y: 0.05
+  joint_origin_z: 0.0
+  joint_origin_a: 0.0
+  joint_origin_b: 0.0
+  joint_origin_c: 0.0
+
+  # shape origin coordinate from link joint origin in link joint origin coordinate
+  shape_origin_x_from_joint_origin: 0.0
+  shape_origin_y_from_joint_origin: 0.01
+  shape_origin_z_from_joint_origin: 0.0
+  shape_origin_a_from_joint_origin: 1.5708 # rotate in x axis
+  shape_origin_b_from_joint_origin: 0.0 # rotate in y axis
+  shape_origin_c_from_joint_origin: 0.0 # rotate in z axis
+
+  # shape for visual and collision tags
+  radius: 0.015
+  length: 0.02
+
+  # center of mass origin from link joint origin
+  com_origin_x_from_joint_origin: 0.0
+  com_origin_y_from_joint_origin: 0.01
+  com_origin_z_from_joint_origin: 0.0
+  com_origin_a_from_joint_origin: 0.0 # rotate in x axis
+  com_origin_b_from_joint_origin: 0.0 # rotate in y axis
+  com_origin_c_from_joint_origin: 0.0 # rotate in z axis
+
+  # inertial parameters
+  # link mass
+  mass: 0.3
+
+  # link inertia at center of mass 
+  ixx: 0.000026875
+  ixy: 0.0
+  ixz: 0.0
+  iyy: 0.00003375
+  iyz: 0.0
+  izz: 0.000026875
+
+tire_right_link: #cylinder
+  # link joint origin from parent joint in parent coordination
+  joint_origin_x: 0.0
+  joint_origin_y: -0.05
+  joint_origin_z: 0.0
+  joint_origin_a: 0.0
+  joint_origin_b: 0.0
+  joint_origin_c: 0.0
+
+  # shape origin coordinate from link joint origin in link joint origin coordinate
+  shape_origin_x_from_joint_origin: 0.0
+  shape_origin_y_from_joint_origin: -0.01
+  shape_origin_z_from_joint_origin: 0.0
+  shape_origin_a_from_joint_origin: 1.5708 # rotate in x axis
+  shape_origin_b_from_joint_origin: 0.0 # rotate in y axis
+  shape_origin_c_from_joint_origin: 0.0 # rotate in z axis
+
+  # shape for visual and collision tags
+  radius: 0.015
+  length: 0.02
+
+  # center of mass origin from link joint origin
+  com_origin_x_from_joint_origin: 0.0
+  com_origin_y_from_joint_origin: -0.01
+  com_origin_z_from_joint_origin: 0.0
+  com_origin_a_from_joint_origin: 0.0 # rotate in x axis
+  com_origin_b_from_joint_origin: 0.0 # rotate in y axis
+  com_origin_c_from_joint_origin: 0.0 # rotate in z axis
+
+  # inertial parameters
+  # link mass
+  mass: 0.3
+
+  # link inertia at center of mass 
+  ixx: 0.000026875
+  ixy: 0.0
+  ixz: 0.0
+  iyy: 0.00003375
+  iyz: 0.0
+  izz: 0.000026875
