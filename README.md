@@ -35,3 +35,8 @@ https://user-images.githubusercontent.com/46311832/222610702-3989f378-2768-4cdd-
 - Ubuntu 22.04
 - ROS2 Humble
 
+## What to do next
+
+- [ ] change control method from PID to LQR
+- [ ]  change control method from PID to I-PD to check date-orientate-PID-method
+- [ ] control wip model via DuakSchock4
