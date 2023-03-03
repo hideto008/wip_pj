@@ -2,11 +2,16 @@
 
 ## wip model
 
+- This model has two wheels links and a haed link.
+- Imu sensor integrated into head link.
+- Wheels can be controlled by effort controller of ROS2 control.
+- PID controller is used to keep wip balance with IMU sensor data.
+
 ![wip model in gazebo](doc/pics/wip_model_in_gazebo.png)
 
 ## gazebo simulation
 
-### withou balance controller
+### without balance controller
 
 wip can't stand without balance controller.
 wip fall down after about 2 seconds started simulation.
