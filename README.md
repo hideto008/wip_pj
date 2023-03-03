@@ -20,11 +20,18 @@ https://user-images.githubusercontent.com/46311832/222610681-1fdaaf89-af6f-4bae-
 
 ### with balance controller
 
-https://user-images.githubusercontent.com/46311832/222610702-3989f378-2768-4cdd-9e44-80286999b915.mp4
-
 wip can stand with balance controller.
+
+https://user-images.githubusercontent.com/46311832/222610702-3989f378-2768-4cdd-9e44-80286999b915.mp4
 
 ## launch file
 
-pkg : bringup
-file : start_process.launch.py
+- pkg : bringup
+
+- file : start_process.launch.py
+
+## Environment
+
+- Ubuntu 22.04
+- ROS2 Humble
+
