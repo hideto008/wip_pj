@@ -1,0 +1,6 @@
+wip_balance_controller:
+  ros__parameters:
+    p_gain: 10.0
+    d_gain: 1.0
+    i_gain: 0.0
+    imu_target_angle: 0.0
