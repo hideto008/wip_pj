@@ -83,7 +83,7 @@
                     </z>
                 </linear_acceleration>
             </imu>
-            <plugin name="wip_control_imu_plugin" filename="libgazebo_ros_sensor.so">
+            <plugin name="wip_control_imu_plugin" filename="libgazebo_ros_imu_sensor.so">
                 <initial_orientation_as_reference>false</initial_orientation_as_reference>
                 <ros>
                     <namespace>/wip_control_imu</namespace>
@@ -93,6 +93,35 @@
         </sensor>
     </gazebo>
 
-    <!--- todo : add ros2_control plugin to tire joints -->
+    <!--- ros2_control plugin to tire joints -->
+    <ros2_control name="GazeboSystem" type="system">
+        <hardware>
+            <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+        </hardware>
+        <joint name="base_to_tire_left">
+            <command_interface name="effort">
+                <param name="min">-1000.0</param>
+                <param name="max">1000.0</param>
+            </command_interface>
+            <state_interface name="position" />
+            <state_interface name="velocity" />
+            <state_interface name="effort" />
+        </joint>
+        <joint name="base_to_tire_right">
+            <command_interface name="effort">
+                <param name="min">-1000.0</param>
+                <param name="max">1000.0</param>
+            </command_interface>
+            <state_interface name="position" />
+            <state_interface name="velocity" />
+            <state_interface name="effort" />
+        </joint>
+    </ros2_control>
+
+    <gazebo>
+        <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so" >
+            <parameters>$(find model)/config/controller.yaml</parameters>
+        </plugin>
+    </gazebo>
 
 </robot>

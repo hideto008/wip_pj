@@ -1,0 +1,21 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 100 # Hz
+
+    effort_controllers:
+      type: effort_controllers/JointGroupEffortController
+    
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+effort_controllers:
+  ros__parameters:
+    joints:
+      - base_to_tire_left
+      - base_to_tire_right
+    command_interface:
+      - effort
+    state_interface:
+      - position
+      - velocity
+      - effort

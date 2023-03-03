@@ -1,7 +1,7 @@
 import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription
+from launch.actions import IncludeLaunchDescription, ExecuteProcess
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node
 
@@ -76,11 +76,24 @@ def generate_launch_description():
         }]
     )
 
+    load_joint_state_broadcaster = ExecuteProcess(
+        cmd=['ros2', 'control', 'load_controller', '--set-state', 'active', 'joint_state_broadcaster'],
+        output='screen'
+    )
+
+    load_effort_controllers = ExecuteProcess(
+        cmd=['ros2', 'control', 'load_controller', '--set-state', 'active', 'effort_controllers'],
+        output='screen'
+    )
+
+
     return LaunchDescription([
         launch_gzserver,
         launch_gzclient,
         spawn_entity,
-        spawn_robot
+        spawn_robot,
+        load_joint_state_broadcaster,
+        load_effort_controllers
     ])
 
 
