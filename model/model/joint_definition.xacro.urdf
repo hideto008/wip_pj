@@ -24,8 +24,8 @@
             <child link="${child_link}" />
             <origin xyz="${child_props['joint_origin_x']} ${child_props['joint_origin_y']} ${child_props['joint_origin_z']}" 
                     rpy="${child_props['joint_origin_a']} ${child_props['joint_origin_b']} ${child_props['joint_origin_c']}"  />
-            <xacro:insert_block name="axis" />
-            <xacro:insert_block name="dynamics" />
+            <xacro:insert_block name="axis" /> <!-- e.g. <axis xyz="0.0 1.0 0.0" /> -->
+            <xacro:insert_block name="dynamics" /> <!-- e.g. <dynamics damping="0.0002" friction="0.002" /> -->
         </joint>
 
     </xacro:macro>
@@ -39,9 +39,9 @@
             <child link="${child_link}" />
             <origin xyz="${child_props['joint_origin_x']} ${child_props['joint_origin_y']} ${child_props['joint_origin_z']}" 
                     rpy="${child_props['joint_origin_a']} ${child_props['joint_origin_b']} ${child_props['joint_origin_c']}" />
-            <xacro:insert_block name="axis" />
-            <xacro:insert_block name="dynamics" />
-            <xacro:insert_block name="limit" />
+            <xacro:insert_block name="axis" /> <!-- e.g. <axis xyz="0.0 1.0 0.0" /> -->
+            <xacro:insert_block name="dynamics" /> <!-- e.g. <dynamics damping="0.0002" friction="0.002" /> -->
+            <xacro:insert_block name="limit" /> <!-- e.g. <limit lower="0" upper="0" effor="3.0" velocity="10.0" -->
         </joint>
 
     </xacro:macro>

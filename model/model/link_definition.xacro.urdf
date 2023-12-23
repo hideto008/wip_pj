@@ -10,22 +10,22 @@
 
         <link name="${link_name}">
             <visual>
-                <origin xyz="${link_props['shape_origin_from_x_joint_origin']} ${link_props['shape_origin_from_y_joint_origin']} ${link_props['shape_origin_from_z_joint_origin']}" 
+                <origin xyz="${link_props['shape_origin_x_from_joint_origin']} ${link_props['shape_origin_y_from_joint_origin']} ${link_props['shape_origin_z_from_joint_origin']}" 
                         rpy="${link_props['shape_origin_a_from_joint_orogin']} ${link_props['shape_origin_b_from_joint_orogin']} ${link_props['shape_origin_c_from_joint_orogin']}" />
                 <geometry>
                     <box size="${link_props['x_length]} ${link_props['y_length]} ${link_props['z_length']}" />
                 </geometry>
             </visual>
             <collision>
-                <origin xyz="${link_props['shape_origin_from_x_joint_origin']} ${link_props['shape_origin_from_y_joint_origin']} ${link_props['shape_origin_from_z_joint_origin']}"  
+                <origin xyz="${link_props['shape_origin_x_from_joint_origin']} ${link_props['shape_origin_y_from_joint_origin']} ${link_props['shape_origin_z_from_joint_origin']}"  
                         rpy="${link_props['shape_origin_a_from_joint_orogin']} ${link_props['shape_origin_b_from_joint_orogin']} ${link_props['shape_origin_c_from_joint_orogin']}" />
                 <geometry>
                     <box size="${link_props['x_length]} ${link_props['y_length]} ${link_props['z_length']}" />
                 </geometry>
             </collision>
             <inertial>
-                <origin xyz="${link_props['com_origin_x_from_joint_center']} ${link_props['com_origin_y_from_joint_center']} ${link_props['com_origin_z_from_joint_center']}" 
-                        rpy="${link_props['com_origin_a_from_joint_center']} ${link_props['com_origin_b_from_joint_center']} ${link_props['com_origin_c_from_joint_center']}" />
+                <origin xyz="${link_props['com_origin_x_from_joint_origin']} ${link_props['com_origin_y_from_joint_origin']} ${link_props['com_origin_z_from_joint_origin']}" 
+                        rpy="${link_props['com_origin_a_from_joint_origin']} ${link_props['com_origin_b_from_joint_origin']} ${link_props['com_origin_c_from_joint_origin']}" />
                 <mass value="${link_props['mass']}" />
                 <inertia ixx="${link_props['ixx']}" ixy="${link_props['ixy']}" ixz="${link_props['ixz']}" 
                          iyy="${link_props['iyy']}" iyz="${link_props['iyz']}" izz="${link_props['izz']}" />
@@ -91,7 +91,7 @@
         </link>
     </xacro:macro>
 
-    <link name="dummy"></link>
+    <link name="dummy"></link> <!-- for floated robot -->
     <xacro:cylinder_link link_name="base_link" />
     <xacro:cylinder_link link_name="neck_link" />
     <xacro:sphere_link link_name="head_link" />
