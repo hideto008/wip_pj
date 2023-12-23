@@ -7,9 +7,9 @@
       },
       "includePath": [
         "/opt/ros/humble/include/**",
-        "/home/user/dev/ROS2/Humble/wip_pj/src/bringup/include/**",
-        "/home/user/dev/ROS2/Humble/wip_pj/src/control/include/**",
-        "/home/user/dev/ROS2/Humble/wip_pj/src/model/include/**",
+        "/home/usr/dev/ROS2/Humble/wip_pj/src/bringup/include/**",
+        "/home/usr/dev/ROS2/Humble/wip_pj/src/control/include/**",
+        "/home/usr/dev/ROS2/Humble/wip_pj/src/model/include/**",
         "/usr/include/**"
       ],
       "name": "ROS",
